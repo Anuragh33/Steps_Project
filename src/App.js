@@ -7,19 +7,28 @@ const messages = [
 ]
 
 export default function App() {
+  return (
+    <div>
+      <Steps />
+      <Steps />
+    </div>
+  )
+}
+
+function Steps() {
   const [step, setStep] = useState(1)
   const [isOpen, setIsOpen] = useState(true)
 
   function handlePrevoius() {
-    if (step > 1) setStep(step - 1)
+    if (step > 1) setStep((s) => s - 1)
   }
 
   function handleNext() {
-    if (step < 3) setStep(step + 1)
+    if (step < 3) setStep((s) => s + 1)
   }
 
   function close() {
-    setIsOpen(!isOpen)
+    setIsOpen((is) => !is)
     setStep(1)
   }
 
